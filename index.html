@@ -22,7 +22,6 @@
 
 html, body { height: 100%; overflow-x: hidden; background: #050314; color: #e9e4ff; }
 html {
-    scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-y: contain;
@@ -69,10 +68,9 @@ body {
 /* ====== Slide base (mandatory viewport fit) ====== */
 .slide {
     width: 100vw;
-    height: 100vh;
-    height: 100dvh;
+    min-height: 100vh;
+    min-height: 100dvh;
     overflow: hidden;
-    scroll-snap-align: start;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -83,8 +81,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-height: 100%;
-    overflow: hidden;
     padding: var(--slide-padding);
     position: relative;
     z-index: 2;
@@ -1208,26 +1204,6 @@ body {
     .matter .icon { width: 24px; height: 24px; font-size: 0.7rem; margin-bottom: 0.3rem; }
     .matter h4 { font-size: 0.85rem; }
     .matter p { font-size: 0.7rem; }
-}
-
-/* ====== Mobile scroll feel — soften snap & let tall slides scroll ====== */
-@media (max-width: 800px) {
-    html {
-        scroll-snap-type: y proximity;
-    }
-    .slide {
-        height: auto;
-        min-height: 100vh;
-        min-height: 100dvh;
-        overflow: visible;
-    }
-    .slide-content {
-        max-height: none;
-        overflow: visible;
-    }
-}
-@media (hover: none) and (pointer: coarse) {
-    html { scroll-snap-type: y proximity; }
 }
 
 /* ====== Reduced motion support ====== */
