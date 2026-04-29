@@ -1739,20 +1739,6 @@ body {
         slides[idx].scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
-    /* ---- Touch swipe ---- */
-    let touchY = 0;
-    document.addEventListener('touchstart', (e) => {
-        touchY = e.touches[0].clientY;
-    }, { passive: true });
-    document.addEventListener('touchend', (e) => {
-        if (!touchY) return;
-        const dy = touchY - e.changedTouches[0].clientY;
-        if (Math.abs(dy) < 60) return;
-        if (dy > 0) goTo(Math.min(current + 1, slides.length - 1));
-        else goTo(Math.max(current - 1, 0));
-        touchY = 0;
-    }, { passive: true });
-
     /* ---- Cursor aura ---- */
     const aura = document.getElementById('aura');
     if (aura && window.matchMedia('(pointer: fine)').matches) {
