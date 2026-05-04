@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Elvis Guterres — Software Engineer. Java, Spring Boot, React. Construtor do ShadowRealm." />
+<meta name="description" content="Elvis Guterres — Software Engineer. Java, Spring Boot, React, IA no SDLC com MCP + RAG + Claude Code. Construtor do ShadowRealm." />
 <meta name="theme-color" content="#050314" />
 <title>Elvis Guterres · Software Engineer</title>
 
@@ -928,21 +928,34 @@ body {
 /* ======================================================================
    SLIDE 07 — TECH MATTER (stack details)
 ====================================================================== */
-#tech-matter .slide-content {
+#tech-matter .slide-content,
+#oraculo .slide-content {
     align-items: center;
     text-align: center;
 }
-#tech-matter .display {
+#tech-matter .display,
+#oraculo .display {
     font-size: clamp(1.5rem, 4.5vw, 3.5rem);
     margin-bottom: var(--element-gap);
 }
-#tech-matter .subtitle {
+#tech-matter .subtitle,
+#oraculo .subtitle {
     color: var(--violet-soft);
     font-size: var(--body-size);
-    max-width: 580px;
+    max-width: 720px;
     margin: 0 auto clamp(1rem, 3vh, 2rem);
     line-height: 1.6;
 }
+#oraculo .oracle-stamp {
+    margin-top: clamp(1rem, 2.5vh, 1.75rem);
+    font-family: var(--font-mono);
+    font-size: var(--small-size);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    text-align: center;
+}
+#oraculo .oracle-stamp strong { color: var(--star); font-weight: 500; }
 
 .matter-grid {
     display: grid;
@@ -1251,17 +1264,18 @@ body {
     <button data-slide="1" data-label="Manifesto" aria-label="Go to Manifesto"></button>
     <button data-slide="2" data-label="Constelação" aria-label="Go to Constellation"></button>
     <button data-slide="3" data-label="Trajetória" aria-label="Go to Trajectory"></button>
-    <button data-slide="4" data-label="ShadowRealm" aria-label="Go to ShadowRealm"></button>
-    <button data-slide="5" data-label="Pilares" aria-label="Go to Pillars"></button>
-    <button data-slide="6" data-label="Stack" aria-label="Go to Tech"></button>
-    <button data-slide="7" data-label="Contato" aria-label="Go to Contact"></button>
+    <button data-slide="4" data-label="Oráculo" aria-label="Go to Oracle"></button>
+    <button data-slide="5" data-label="ShadowRealm" aria-label="Go to ShadowRealm"></button>
+    <button data-slide="6" data-label="Pilares" aria-label="Go to Pillars"></button>
+    <button data-slide="7" data-label="Stack" aria-label="Go to Tech"></button>
+    <button data-slide="8" data-label="Contato" aria-label="Go to Contact"></button>
 </nav>
 
 <!-- ========== Slide counter ========== -->
 <div class="slide-counter" aria-live="polite">
     <span class="current">01</span>
-    <span class="bar" style="--progress: 12.5%;"></span>
-    <span>08</span>
+    <span class="bar" style="--progress: 11.11%;"></span>
+    <span>09</span>
 </div>
 
 <main>
@@ -1435,8 +1449,9 @@ body {
                 <h3>Desenvolvedor de Software</h3>
                 <p class="company">Grupo Apisul · Seguros</p>
                 <ul>
+                    <li>Liderou adoção de <strong>IA no SDLC</strong> · MCP + RAG + Claude Code</li>
                     <li><strong>+20,6%</strong> velocidade do time · <strong>#1</strong> em entregas</li>
-                    <li><strong>−34%</strong> taxa de defeitos por história</li>
+                    <li><strong>−34%</strong> defeitos por história · cobertura <strong>0% → 89%</strong></li>
                     <li><strong>Kubernetes</strong> + <strong>AWS Cognito</strong> em produção</li>
                 </ul>
             </article>
@@ -1481,12 +1496,71 @@ body {
 </section>
 
 <!-- ============================================
-     SLIDE 05 — REALM PORTAL (ShadowRealm intro)
+     SLIDE 05 — ORÁCULO (AI in the SDLC)
 ============================================ -->
-<section class="slide" id="realm-portal" data-index="4">
+<section class="slide" id="oraculo" data-index="4">
+    <div class="slide-content">
+        <p class="eyebrow reveal">Capítulo IV · Oráculo</p>
+        <h2 class="display reveal delay-1">
+            O agente que <span class="accent">constrói comigo</span>
+        </h2>
+        <p class="subtitle reveal delay-2">
+            Liderei a adoção de <strong style="color: var(--star);">IA no SDLC</strong> da empresa.
+            Construí um <strong style="color: var(--star);">MCP server proprietário</strong> com RAG do produto,
+            ligando o <strong style="color: var(--star);">Claude Code</strong> ao Azure DevOps —
+            do workitem ao PR, com testes e evidências automatizadas.
+        </p>
+
+        <div class="matter-grid">
+            <div class="matter reveal delay-1">
+                <div class="icon">⌬</div>
+                <h4>MCP Server</h4>
+                <p>Servidor Model Context Protocol que liga o Claude Code ao board e ao código. O agente lê workitems, consulta o domínio e gera implementação contextualizada.</p>
+            </div>
+            <div class="matter reveal delay-2">
+                <div class="icon">⚛</div>
+                <h4>RAG do Produto</h4>
+                <p>Base de conhecimento técnica e de negócio em retrieval-augmented generation. O agente entende o produto antes de escrever uma linha.</p>
+            </div>
+            <div class="matter reveal delay-3">
+                <div class="icon">⚙</div>
+                <h4>PRs Automatizados</h4>
+                <p>Cada Pull Request abre com workitem associado, testes unitários (JUnit/Mockito) e E2E (Playwright) cobrindo o fluxo da tarefa e regressão.</p>
+            </div>
+            <div class="matter reveal delay-4">
+                <div class="icon">⚡</div>
+                <h4>Evidências em CI</h4>
+                <p>Playwright roda no pipeline e anexa screenshots e vídeos como comentários no Azure DevOps em nome do dev. Adeus, doc manual de QA.</p>
+            </div>
+            <div class="matter reveal delay-5">
+                <div class="icon">✦</div>
+                <h4>Prompt Engineering</h4>
+                <p>Prompts e contextos calibrados para que o agente analise, planeje e execute como mais um membro do time — não como autocomplete.</p>
+            </div>
+            <div class="matter reveal delay-6">
+                <div class="icon">⚗</div>
+                <h4>Adoção em 2 Semanas</h4>
+                <p>Após apresentação interna sobre IA, o fluxo virou padrão na empresa em 2 semanas. Reformulou como o time analisa, codifica, testa e entrega.</p>
+            </div>
+        </div>
+
+        <p class="oracle-stamp reveal delay-6">
+            Claude Code <span style="color: var(--violet-soft);">·</span>
+            Model Context Protocol <span style="color: var(--violet-soft);">·</span>
+            RAG <span style="color: var(--violet-soft);">·</span>
+            Azure DevOps <span style="color: var(--violet-soft);">·</span>
+            Playwright
+        </p>
+    </div>
+</section>
+
+<!-- ============================================
+     SLIDE 06 — REALM PORTAL (ShadowRealm intro)
+============================================ -->
+<section class="slide" id="realm-portal" data-index="5">
     <div class="slide-content">
         <div class="realm-text reveal">
-            <p class="eyebrow">Capítulo IV · Projeto Pessoal</p>
+            <p class="eyebrow">Capítulo V · Projeto Pessoal</p>
             <h2 class="display">
                 Construí um <br>
                 <span class="accent">universo paralelo</span><br>
@@ -1516,12 +1590,12 @@ body {
 </section>
 
 <!-- ============================================
-     SLIDE 06 — PILLARS (3 features)
+     SLIDE 07 — PILLARS (3 features)
 ============================================ -->
-<section class="slide" id="pillars" data-index="5">
+<section class="slide" id="pillars" data-index="6">
     <div class="slide-content">
         <header class="pillar-header">
-            <p class="eyebrow reveal">Capítulo V · Os Três Pilares</p>
+            <p class="eyebrow reveal">Capítulo VI · Os Três Pilares</p>
             <h2 class="display reveal delay-1">Tudo que <span class="accent">um mestre</span> precisa</h2>
         </header>
 
@@ -1563,11 +1637,11 @@ body {
 </section>
 
 <!-- ============================================
-     SLIDE 07 — TECH MATTER
+     SLIDE 08 — TECH MATTER
 ============================================ -->
-<section class="slide" id="tech-matter" data-index="6">
+<section class="slide" id="tech-matter" data-index="7">
     <div class="slide-content">
-        <p class="eyebrow reveal">Capítulo VI · A Matéria</p>
+        <p class="eyebrow reveal">Capítulo VII · A Matéria</p>
         <h2 class="display reveal delay-1">
             <span class="accent">Decisões técnicas</span> com peso
         </h2>
@@ -1611,9 +1685,9 @@ body {
 </section>
 
 <!-- ============================================
-     SLIDE 08 — SUMMON (CTA)
+     SLIDE 09 — SUMMON (CTA)
 ============================================ -->
-<section class="slide" id="summon" data-index="7">
+<section class="slide" id="summon" data-index="8">
     <div class="orbital-footer" aria-hidden="true"></div>
     <div class="slide-content">
         <p class="eyebrow reveal">Capítulo Final · Convocação</p>
